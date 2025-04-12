@@ -7,10 +7,10 @@ export default defineConfig({
   base: '/whyt-education/',
   build: {
     outDir: 'dist',
-    assetsDir: 'assets',
+    assetsDir: '.',
     rollupOptions: {
       output: {
-        assetFileNames: 'assets/[name]-[hash][extname]',
+        assetFileNames: '[name][extname]',
         chunkFileNames: 'assets/[name]-[hash].js',
         entryFileNames: 'assets/[name]-[hash].js',
       }
