@@ -30,19 +30,6 @@ const ContactText = styled.span`
   margin-right: 10px;
 `;
 
-const QRCodeContainer = styled.div`
-  margin-top: 30px;
-  padding: 20px;
-  background: #f5f5f5;
-  border-radius: 8px;
-  display: inline-block;
-`;
-
-const QRCodeTitle = styled.h3`
-  color: #333;
-  margin-bottom: 10px;
-`;
-
 const QRCodeImage = styled.img`
   width: 200px;
   height: 200px;
@@ -66,14 +53,6 @@ const Contact: React.FC = () => {
         </ContactItem>
         <QRCodeImage src="qrcode.png" alt="联系我们二维码" />
       </ContactInfo>
-
-      <QRCodeContainer>
-        <QRCodeTitle>扫描二维码关注我们</QRCodeTitle>
-        <div style={{ width: '200px', height: '200px', background: '#fff', margin: '0 auto' }}>
-          {/* 这里需要替换为实际的二维码图片 */}
-          <p style={{ lineHeight: '200px' }}>二维码图片</p>
-        </div>
-      </QRCodeContainer>
     </ContactContainer>
   );
 };
