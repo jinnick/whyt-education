@@ -60,7 +60,7 @@ const Contact: React.FC = () => {
           <ContactIcon>📱</ContactIcon>
           <ContactText>扫下方的二维码联系我们：</ContactText>
         </ContactItem>
-        <QRCodeImage src="/qrcode.png" alt="联系我们二维码" />
+        <QRCodeImage src={`${import.meta.env.BASE_URL}qrcode.png`} alt="联系我们二维码" />
       </ContactInfo>
 
       <QRCodeContainer>

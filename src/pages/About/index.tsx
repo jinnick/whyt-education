@@ -205,7 +205,7 @@ const About: React.FC = () => {
         <TeamTitle>我们的团队</TeamTitle>
         <TeamGrid>
           <TeamMember>
-            <MemberPhoto src="/wuyunzhai.jpg" alt="五云寨主老师" />
+            <MemberPhoto src={`${import.meta.env.BASE_URL}wuyunzhai.jpg`} alt="五云寨主老师" />
             <MemberName>五云寨主老师</MemberName>
             <MemberRole>教育咨询总监</MemberRole>
             <MemberBio>
@@ -215,7 +215,7 @@ const About: React.FC = () => {
             </MemberBio>
           </TeamMember>
           <TeamMember>
-            <MemberPhoto src="/Kyrie.jpg" alt="Kyrie老师" />
+            <MemberPhoto src={`${import.meta.env.BASE_URL}Kyrie.jpg`} alt="Kyrie老师" />
             <MemberName>Kyrie老师</MemberName>
             <MemberRole>学术顾问</MemberRole>
             <MemberBio>
