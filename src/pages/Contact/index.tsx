@@ -47,7 +47,11 @@ const QRCodeImage = styled.img`
   width: 200px;
   height: 200px;
   background: #fff;
-  margin: 0 auto;
+  margin: 20px auto;
+  display: block;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 10px;
 `;
 
 const Contact: React.FC = () => {
@@ -60,7 +64,7 @@ const Contact: React.FC = () => {
           <ContactIcon>📱</ContactIcon>
           <ContactText>扫下方的二维码联系我们：</ContactText>
         </ContactItem>
-        <QRCodeImage src="/qrcode.png" alt="联系我们二维码" />
+        <QRCodeImage src="qrcode.png" alt="联系我们二维码" />
       </ContactInfo>
 
       <QRCodeContainer>
