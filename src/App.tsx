@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Courses from './pages/Courses';
 import CourseDetail from './pages/CourseDetail';
 import SubCourseDetail from './pages/SubCourseDetail';
+import CareerPlanning from './pages/CareerPlanning';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Navbar from './components/Navbar';
@@ -18,6 +19,7 @@ const App: React.FC = () => {
         <Route path="/courses" element={<Courses />} />
         <Route path="/course/:id" element={<CourseDetail />} />
         <Route path="/sub-course/:id" element={<SubCourseDetail />} />
+        <Route path="/career-planning" element={<CareerPlanning />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
