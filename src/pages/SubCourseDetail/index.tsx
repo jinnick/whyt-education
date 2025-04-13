@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import ConsultModal from '../../components/ConsultModal';
 
 const Container = styled.div`
@@ -195,6 +195,26 @@ const CourseFeature = styled.div`
   padding: 10px;
   background-color: #f8f9fa;
   border-radius: 5px;
+`;
+
+const NavigationButtons = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+`;
+
+const NavButton = styled.button`
+  padding: 10px 20px;
+  background-color: #1a237e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: #0d47a1;
+  }
 `;
 
 // 定义课程数据类型
@@ -571,16 +591,91 @@ const courses: Record<number, Course> = {
     duration: '14课时',
     price: '1799元',
     format: '直播录播模式上课，直播模式解答问题'
+  },
+  7: {
+    title: '高考全科目辅导',
+    description: '专业的高考全科目辅导，提供个性化学习方案',
+    teacher: '高考辅导团队',
+    outline: [
+      '语文、数学、英语等全科目系统复习',
+      '重点难点突破',
+      '模拟考试训练',
+      '答题技巧指导',
+      '心理辅导支持'
+    ],
+    features: [
+      '一对一辅导',
+      '个性化学习方案',
+      '定期测试评估',
+      '重点难点突破',
+      '模拟考试训练',
+      '心理辅导支持'
+    ],
+    targetAudience: ['高三学生', '复读生'],
+    duration: '根据学生需求定制',
+    price: '详询客服',
+    format: '一对一辅导'
+  },
+  8: {
+    title: '考研专业课辅导',
+    description: '针对性的考研专业课辅导，助力考研成功',
+    teacher: '考研辅导团队',
+    outline: [
+      '专业课重点难点讲解',
+      '历年真题分析',
+      '考研规划指导',
+      '专业课程体系梳理',
+      '考点预测分析',
+      '答题技巧训练'
+    ],
+    features: [
+      '专业课重点难点讲解',
+      '历年真题分析',
+      '考研规划指导',
+      '专业课程体系梳理',
+      '考点预测分析',
+      '答题技巧训练'
+    ],
+    targetAudience: ['考研学生', '专业课提升需求者'],
+    duration: '根据专业课程定制',
+    price: '详询客服',
+    format: '一对一辅导'
+  },
+  9: {
+    title: '考研英语和政治辅导',
+    description: '专业的考研公共课辅导，提供系统化学习方案',
+    teacher: '考研辅导团队',
+    outline: [
+      '系统化学习方案',
+      '重点题型突破',
+      '模拟训练',
+      '作文批改指导',
+      '时事政治分析',
+      '答题技巧训练'
+    ],
+    features: [
+      '系统化学习方案',
+      '重点题型突破',
+      '模拟训练',
+      '作文批改指导',
+      '时事政治分析',
+      '答题技巧训练'
+    ],
+    targetAudience: ['考研学生', '公共课提升需求者'],
+    duration: '根据课程安排',
+    price: '详询客服',
+    format: '一对一辅导'
   }
 };
 
 const SubCourseDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const courseId = id ? parseInt(id) : 0;
+  const courseId = parseInt(id || '0', 10);
   
   // 确保courseId是有效的数字
-  if (isNaN(courseId) || courseId < 1 || courseId > 6) {
+  if (isNaN(courseId) || courseId < 1 || courseId > 9) {
     return <div>课程未找到</div>;
   }
 
@@ -595,6 +690,9 @@ const SubCourseDetail: React.FC = () => {
       <Header>
         <Title>{course.title}</Title>
         <Description>{course.description}</Description>
+        <NavigationButtons>
+          <NavButton onClick={() => navigate('/courses')}>返回课程列表</NavButton>
+        </NavigationButtons>
       </Header>
       
       <Content>
