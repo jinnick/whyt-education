@@ -3,16 +3,25 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const NavbarContainer = styled.nav`
-  background-color: #2c3e50;
-  padding: 1rem 2rem;
+  background-color: #1a237e;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+`;
+
+const NavContent = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
-const Logo = styled(Link)`
+const Logo = styled.div`
   color: white;
-  text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;
 `;
@@ -25,24 +34,27 @@ const NavLinks = styled.div`
 const NavLink = styled(Link)`
   color: white;
   text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
 
   &:hover {
-    color: #3498db;
+    color: #b3e5fc;
   }
 `;
 
 const Navbar: React.FC = () => {
   return (
     <NavbarContainer>
-      <Logo to="/">武汉翼通教育</Logo>
-      <NavLinks>
-        <NavLink to="/">首页</NavLink>
-        <NavLink to="/courses">课程服务</NavLink>
-        <NavLink to="/about">关于我们</NavLink>
-        <NavLink to="/contact">联系我们</NavLink>
-      </NavLinks>
+      <NavContent>
+        <Logo>武汉翼通教育</Logo>
+        <NavLinks>
+          <NavLink to="/">首页</NavLink>
+          <NavLink to="/courses">课程</NavLink>
+          <NavLink to="/career-planning">高考考研志愿咨询</NavLink>
+          <NavLink to="/login">登录</NavLink>
+          <NavLink to="/register">注册</NavLink>
+        </NavLinks>
+      </NavContent>
     </NavbarContainer>
   );
 };

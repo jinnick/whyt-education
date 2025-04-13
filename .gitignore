@@ -6,9 +6,6 @@
 # testing
 /coverage
 
-# production
-/dist
-
 # misc
 .DS_Store
 .env.local
@@ -25,7 +22,6 @@ logs
 *.log
 
 node_modules
-dist
 dist-ssr
 *.local
 
