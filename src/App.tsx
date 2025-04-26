@@ -7,6 +7,7 @@ import SubCourseDetail from './pages/SubCourseDetail';
 import CareerPlanning from './pages/CareerPlanning';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import About from './pages/About';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -22,6 +23,7 @@ const App: React.FC = () => {
         <Route path="/career-planning" element={<CareerPlanning />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
     </Router>

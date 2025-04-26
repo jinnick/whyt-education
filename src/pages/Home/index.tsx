@@ -45,12 +45,14 @@ const Button = styled(Link)`
 const TeamSection = styled.section`
   padding: 4rem 2rem;
   background-color: #f5f5f5;
+  margin-top: 2rem;
 `;
 
 const TeamTitle = styled.h2`
   text-align: center;
   color: #1a237e;
   margin-bottom: 2rem;
+  font-size: 2rem;
 `;
 
 const TeamGrid = styled.div`
@@ -71,17 +73,21 @@ const TeamMember = styled.div`
 const MemberName = styled.h3`
   color: #1a237e;
   margin-bottom: 1rem;
+  font-size: 1.5rem;
 `;
 
 const MemberTitle = styled.p`
   color: #666;
   font-style: italic;
   margin-bottom: 1rem;
+  font-size: 1.1rem;
 `;
 
-const MemberDescription = styled.p`
+const MemberDescription = styled.div`
   color: #333;
   line-height: 1.6;
+  text-align: left;
+  font-size: 1rem;
 `;
 
 const Home: React.FC = () => {
@@ -96,25 +102,43 @@ const Home: React.FC = () => {
         <TeamTitle>我们的团队</TeamTitle>
         <TeamGrid>
           <TeamMember>
+            <MemberName>五云寨主老师</MemberName>
+            <MemberTitle>首席教育顾问</MemberTitle>
+            <MemberDescription>
+              <p>• 教育行业资深专家</p>
+              <p>• 多年教育咨询经验</p>
+              <p>• 专注于学生发展规划</p>
+            </MemberDescription>
+          </TeamMember>
+          <TeamMember>
+            <MemberName>Kyrie老师</MemberName>
+            <MemberTitle>课程开发总监</MemberTitle>
+            <MemberDescription>
+              <p>• 教育技术专家</p>
+              <p>• 课程设计专家</p>
+              <p>• 在线教育先锋</p>
+            </MemberDescription>
+          </TeamMember>
+          <TeamMember>
             <MemberName>猴老师</MemberName>
             <MemberTitle>英国大学副教授</MemberTitle>
             <MemberDescription>
-              • 英国大学副教授（Associate Professor/Reader）<br />
-              • 旅欧10+年，居英8+年，大学任教~10年<br />
-              • 曾在国内综合性985大学任教职，主持国家级、省级项目<br />
-              • 至今英国大学任教7年，项目经费 &gt; £ 1M<br />
-              • 曾全过程管理学院所有博士研究生，包括入学(Admission)，考核(Review)，毕业(Viva/Defence)<br />
-              • 学校学位评定委员会委员<br />
-              • 现管理人工智能硕士专业(MSc AI)
+              <p>• 英国大学副教授（Associate Professor/Reader）</p>
+              <p>• 旅欧10+年，居英8+年，大学任教~10年</p>
+              <p>• 曾在国内综合性985大学任教职，主持国家级、省级项目</p>
+              <p>• 至今英国大学任教7年，项目经费 &gt; £ 1M</p>
+              <p>• 曾全过程管理学院所有博士研究生，包括入学(Admission)，考核(Review)，毕业(Viva/Defence)</p>
+              <p>• 学校学位评定委员会委员</p>
+              <p>• 现管理人工智能硕士专业(MSc AI)</p>
             </MemberDescription>
           </TeamMember>
           <TeamMember>
             <MemberName>米老师</MemberName>
             <MemberTitle>美国州立大学终身教授</MemberTitle>
             <MemberDescription>
-              • 留美10余年<br />
-              • 美国计算机博士<br />
-              • 州立大学终身教授
+              <p>• 留美10余年</p>
+              <p>• 美国计算机博士</p>
+              <p>• 州立大学终身教授</p>
             </MemberDescription>
           </TeamMember>
         </TeamGrid>

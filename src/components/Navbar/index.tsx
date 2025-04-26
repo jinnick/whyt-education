@@ -51,6 +51,7 @@ const Navbar: React.FC = () => {
           <NavLink to="/">首页</NavLink>
           <NavLink to="/courses">课程</NavLink>
           <NavLink to="/career-planning">高考考研志愿咨询</NavLink>
+          <NavLink to="/about">关于我们</NavLink>
           <NavLink to="/login">登录</NavLink>
           <NavLink to="/register">注册</NavLink>
         </NavLinks>
