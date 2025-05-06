@@ -78,6 +78,10 @@ const TeamGrid = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 100vh;
+  overflow: visible;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -90,6 +94,14 @@ const TeamMember = styled.div`
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: 1px solid #eee;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  height: auto;
+  overflow: visible;
 `;
 
 const MemberPhoto = styled.div`
@@ -102,6 +114,13 @@ const MemberPhoto = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   svg {
     width: 100%;
@@ -114,6 +133,7 @@ const MemberName = styled.h3`
   text-align: center;
   margin-bottom: 0.5rem;
   font-size: 1.5em;
+  width: 100%;
 `;
 
 const MemberRole = styled.p`
@@ -121,6 +141,7 @@ const MemberRole = styled.p`
   text-align: center;
   margin-bottom: 1rem;
   font-size: 1.2em;
+  width: 100%;
 `;
 
 const MemberBio = styled.ul`
@@ -129,32 +150,16 @@ const MemberBio = styled.ul`
   padding-left: 20px;
   list-style-type: disc;
   margin: 0;
+  width: 100%;
+  height: auto;
+  overflow: visible;
 `;
 
 const teachers = [
   {
-    name: '五云寨老师',
-    title: '教育咨询总监',
-    info: [
-      '985本科和硕士，澳大利亚昆士兰大学计算机博士',
-      '曾任美国国立卫生院科学家和美国名校助理教授',
-      '现任国内某头部研究所独立PI，研究成果曾发表于人工智能、计算机视觉、医学图像等领域的国际顶级会议和期刊上',
-      '在人工智能以及于医学、生物等交叉领域具有丰富的实战经验和个人实力'
-    ]
-  },
-  {
-    name: 'Kyrie老师',
-    title: '学术顾问',
-    info: [
-      '基础医学美国PhD（神经退化性疾病研究）',
-      '美国哥伦比亚大学计算机（机器学习方向）硕士',
-      '互联网公司机器学习算法工程师',
-      '授课老师的基础医学研究背景和计算机工程背景可以深入理解临床医学生物学研究的问题并针对性的讲解机器学习模型用于解决相关问题'
-    ]
-  },
-  {
     name: '猴老师',
-    title: 'UK留学丝滑教程 3 hr',
+    title: '授课老师',
+    photo: null,
     info: [
       '英国大学副教授（Associate Professor/Reader）',
       '旅欧10+年，居英8+年，大学任教~10年',
@@ -168,10 +173,35 @@ const teachers = [
   {
     name: '米老师',
     title: '授课老师',
+    photo: null,
     info: [
       '留美10余年',
       '美国计算机博士',
       '州立大学终身教授'
+    ]
+  },
+  {
+    name: '五云寨主',
+    title: '技术顾问',
+    photo: '/images/wuyunzhai.jpg',
+    info: [
+      '985本科和硕士，澳大利亚昆士兰大学计算机博士',
+      '曾任美国国立卫生院科学家和美国名校助理教授',
+      '现任国内某头部研究所独立PI',
+      '研究成果曾发表于人工智能，计算机视觉，医学图像等领域的国际顶级会议和期刊上',
+      '在人工智能以及于医学，生物等交叉领域具有丰富的实战经验和个人实力'
+    ]
+  },
+  {
+    name: 'Kyrie老师',
+    title: '学术顾问',
+    photo: '/images/Kyrie.jpg',
+    info: [
+      '基础医学美国PhD（神经退化性疾病研究），美国哥伦比亚大学计算机（机器学习方向）硕士',
+      '互联网公司机器学习算法工程师',
+      '授课老师的基础医学研究背景和计算机工程背景可以深入理解临床医学生物学研究的问题并针对性的讲解机器学习模型用于解决相关问题'
+
+      
     ]
   }
 ];
@@ -266,12 +296,16 @@ const About: React.FC = () => {
           {teachers.map((teacher, index) => (
             <TeamMember key={index}>
               <MemberPhoto>
-                <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
-                  <rect width="200" height="200" fill="#ddd" />
-                  <text x="50%" y="50%" textAnchor="middle" dy=".3em" fill="#666" fontSize="24">
-                    {teacher.name}
-                  </text>
-                </svg>
+                {teacher.photo ? (
+                  <img src={teacher.photo} alt={teacher.name} />
+                ) : (
+                  <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+                    <rect width="200" height="200" fill="#ddd" />
+                    <text x="50%" y="50%" textAnchor="middle" dy=".3em" fill="#666" fontSize="24">
+                      {teacher.name}
+                    </text>
+                  </svg>
+                )}
               </MemberPhoto>
               <MemberName>{teacher.name}</MemberName>
               <MemberRole>{teacher.title}</MemberRole>

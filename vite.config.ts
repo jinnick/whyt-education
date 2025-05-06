@@ -6,6 +6,17 @@ import path from 'path'
 export default defineConfig({
   plugins: [react()],
   base: '/',
+  server: {
+    port: 5173,
+    host: true,
+    open: true,
+    hmr: {
+      overlay: true,
+    },
+    watch: {
+      usePolling: true,
+    },
+  },
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
