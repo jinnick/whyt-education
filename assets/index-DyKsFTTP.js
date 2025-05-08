@@ -351,29 +351,39 @@ Error generating stack: `+o.message+`
 2. 学校选择建议
 3. 申请材料准备指导
 4. 签证申请指导
-5. 美国生存指南`,duration:"全程服务",link:null},{name:"B套餐",description:`留学申请全套服务，包含：
+5. 美国生存指南
+
+价格：¥15,000`,duration:"全程服务",link:null},{name:"B套餐",description:`留学申请全套服务，包含：
 1. A套餐所有服务
 2. 文书写作指导
 3. 推荐信准备指导
 4. 面试培训
 5. 奖学金申请指导
-6. 行前准备指导`,duration:"全程服务",link:null},{name:"C套餐",description:`PhD科研型岗位留学申请全套，包含：
+6. 行前准备指导
+
+价格：¥20,000`,duration:"全程服务",link:null},{name:"C套餐",description:`PhD科研型岗位留学申请全套，包含：
 1. B套餐所有服务
 2. 研究计划书写作指导
 3. 学术简历优化
 4. 导师联系指导
 5. 实验室申请指导
-6. 科研项目规划`,duration:"全程服务",link:null},{name:"D套餐",description:`LGBTQ背景留学申请全套，包含：
+6. 科研项目规划
+
+价格：¥30,000`,duration:"全程服务",link:null},{name:"D套餐",description:`LGBTQ背景留学申请全套，包含：
 1. B套餐所有服务
 2. LGBTQ友好学校推荐
 3. 特殊奖学金申请指导
 4. 社区资源对接
-5. 心理支持服务`,duration:"全程服务",link:null},{name:"E套餐",description:`LGBTQ背景科研类型岗位留学申请全套，包含：
+5. 心理支持服务
+
+价格：¥25,000`,duration:"全程服务",link:null},{name:"E套餐",description:`LGBTQ背景科研类型岗位留学申请全套，包含：
 1. C套餐所有服务
 2. D套餐所有服务
 3. LGBTQ友好实验室推荐
 4. 跨性别医疗资源对接
-5. 学术社区支持`,duration:"全程服务",link:null},{name:"单项咨询",description:`1对1针对性面谈咨询，可选服务：
+5. 学术社区支持
+
+价格：¥20,000`,duration:"全程服务",link:null},{name:"单项咨询",description:`1对1针对性面谈咨询，可选服务：
 1. 留学规划咨询
 2. 文书修改
 3. 面试培训
